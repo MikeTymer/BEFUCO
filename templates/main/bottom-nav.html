@@ -1,0 +1,37 @@
+{% load static %}
+
+
+
+<nav class="mobile-bottom-nav">
+
+	<div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+		<div class="mobile-bottom-nav__item-content text-black">
+            
+                <i class="material-icons"><a href="{% url 'blog_home' %}">home</a></i>
+                <strong class="text-black">Blog-home </strong>
+          
+		</div>		
+	</div>
+
+	<div class="mobile-bottom-nav__item text-black">		
+		<div class="mobile-bottom-nav__item-content">
+			<i class="material-icons"><a href="{% for company_entries in company_entries  %}{{ company_entries.whatsapp}}{% endfor %}">chat</a></i>
+			<strong class="text-black">Chat</strong>
+		</div>
+	</div>
+
+	<div class="mobile-bottom-nav__item text-black">
+		<div class="mobile-bottom-nav__item-content">
+			<i class="material-icons"><a href="{% url 'contact_us' %}">person</a></i>
+			<strong class="text-black">contact us</strong>
+		</div>		
+	</div>
+	
+	<div class="mobile-bottom-nav__item text-black">
+		<div class="mobile-bottom-nav__item-content">
+			<i class="material-icons"><a href="tel:+{% for data in company_entries  %}{{ data.contact}}{% endfor %}">phone</a></i>
+			<strong class="text-black">Call</strong>
+		</div>		
+	</div>
+</nav>
+<!-- ------------ -->

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome{% endblock title %}
+{% load static %}
+
+{% block content %}
+<section data-bs-version="5.1" class="features4 cid-tMlEXTHLbS" id="features04-w" style="padding-top: 10%; padding-left: 10%;">
+
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="container-fluid">
+            <h2 class="head">
+                <div class = "text-black" >
+                    
+                    <h1 class="header07-1p text-black"> 
+                        <strong>Welcome to {% for data in company_entries  %}{{ data.sitename}}{% endfor %}  </strong>
+
+                    </h1>
+                    <a class="btn btn-black display-4" href="{% url 'contact_us' %}"> Start Now!</a>
+                    <br>
+                    {% for data in company_entries  %}{{ data.welcome_message}}{% endfor %}
+                    <br>
+                    
+
+                </div>
+            </h2>
+        </div>
+        </div>
+        </div>
+
+
+</section>
+
+{% endblock content %}
